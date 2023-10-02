@@ -60,7 +60,7 @@ public class MyStack<T> {
 	public static void main(String[] args) {
 		// TODO To complete
 		// Create a stack of Integer
-		MyStack<Integer> IntegerStack = new MyStack();
+		MyStack<Integer> IntegerStack = new MyStack<Integer>();
 		// Push 1 and 2
 		IntegerStack.push(1);
 		IntegerStack.push(2);
@@ -72,7 +72,7 @@ public class MyStack<T> {
 		
 		// TODO To complete
 		// Create a stack of Person
-		MyStack<Person> PersonStack= new MyStack();
+		MyStack<Person> PersonStack= new MyStack<Person>();
 		// Push a person p1 with your name
 		Person me = new Person("Alex", "Martinez");
 		PersonStack.push(me);
@@ -81,16 +81,17 @@ public class MyStack<T> {
 		PersonStack.push(you);
 		
 		
+		//Testing both types of stacks to make sure they are working as intended
 		
-		//Testing Int
-		System.out.println("Integer Stack:");
+		//Testing Int Stack
+		System.out.println("Integer Stack");
 		while(!IntegerStack.isEmpty()) {
 			int popInt = IntegerStack.pop();
 			System.out.println("Int popped: " + popInt);
 		}
 		
-		//Testing Person
-		System.out.println("Person Stack:");
+		//Testing Person Stack
+		System.out.println("Person Stack");
 		while(!PersonStack.isEmpty()) {
 			Person popPerson = PersonStack.pop();
 			System.out.println("Person popped: " + popPerson.getFname() + " " + popPerson.getLname());

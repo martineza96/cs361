@@ -50,30 +50,30 @@ public class Reflection {
 		// Hint: Use the method getSuperClass()
 		
 		// Start with the provided object's class
-	    Class<?> currentClass = o.getClass();
+		Class currentClass = o.getClass();
 
 	    System.out.println("Inheritance chain:");
 	    
 	    while (currentClass != null) {
 	        System.out.print(currentClass.getSimpleName());
 
-	        // Check if there is a superclass
-	        Class<?> superClass = currentClass.getSuperclass();
+	        // Finding if there is a super class above where we are each iteration
+	        Class superClass = currentClass.getSuperclass();
 	        if (superClass != null) {
 	            System.out.print(" class inherits from the class: ");
 	            System.out.print(superClass.getSimpleName());
 	            System.out.println("\n");
 	        }
 
-	        // Check if it's not the top-level Object class
+	        // If its not the highest class we output that there is more
 	        if (!currentClass.equals(Object.class)) {
 	            System.out.print("The ");
 	        }
 
-	        currentClass = superClass; // Move to the superclass
+	        currentClass = superClass;
 	    }
 
-	    // Add the final inheritance from java.lang.Object
+	    // Adding the final class that the original class inherits from
 	    System.out.println(" class inherits from java.lang.Object");
 	    System.out.println("\n");
 	}
@@ -124,9 +124,9 @@ public class Reflection {
 		// Demonstration of the methods on an objet of type ColoredCircle
 		// TODO To complete	
 		ColoredCircle circle = new ColoredCircle();
-		circle.centerX = 6.0;
-		circle.centerY = 6.0;
-		circle.radius = 3;
+//		circle.centerX = 6.0;
+//		circle.centerY = 6.0;
+//		circle.radius = 3;
 		r.correspondingClass(circle);
 		r.inheritanceChain(circle);
 		r.listMethods(circle);
